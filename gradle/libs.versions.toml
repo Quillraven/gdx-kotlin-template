@@ -3,12 +3,16 @@ jvmToolchainVersion = "17"
 kotlinVersion = "2.2.0"
 gdxVersion = "1.13.5"
 ktxVersion = "1.13.1-rc1"
+gdxAiVersion = "1.8.2"
+fleksVersion = "2.11"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
+#gdx base
 gdx = { module = "com.badlogicgames.gdx:gdx", version.ref = "gdxVersion" }
 gdxBackendLwjgl3 = { module = "com.badlogicgames.gdx:gdx-backend-lwjgl3", version.ref = "gdxVersion" }
 gdxPlatform = { module = "com.badlogicgames.gdx:gdx-platform", version.ref = "gdxVersion" }
+# ktx base
 ktxActors = { module = "io.github.libktx:ktx-actors", version.ref = "ktxVersion" }
 ktxApp = { module = "io.github.libktx:ktx-app", version.ref = "ktxVersion" }
 ktxAssets = { module = "io.github.libktx:ktx-assets", version.ref = "ktxVersion" }
@@ -17,7 +21,26 @@ ktxGraphics = { module = "io.github.libktx:ktx-graphics", version.ref = "ktxVers
 ktxLog = { module = "io.github.libktx:ktx-log", version.ref = "ktxVersion" }
 ktxMath = { module = "io.github.libktx:ktx-math", version.ref = "ktxVersion" }
 ktxScene2d = { module = "io.github.libktx:ktx-scene2d", version.ref = "ktxVersion" }
+# box2d
+gdxBox2dPlatform = { module = "com.badlogicgames.gdx:gdx-box2d-platform", version.ref = "gdxVersion" }
+gdxBox2d = { module = "com.badlogicgames.gdx:gdx-box2d", version.ref = "gdxVersion" }
+ktxBox2d = { module = "io.github.libktx:ktx-box2d", version.ref = "ktxVersion" }
+# freetype
+gdxFreetypePlatform = { module = "com.badlogicgames.gdx:gdx-freetype-platform", version.ref = "gdxVersion" }
+gdxFreetype = { module = "com.badlogicgames.gdx:gdx-freetype", version.ref = "gdxVersion" }
+ktxFreetype = { module = "io.github.libktx:ktx-freetype", version.ref = "ktxVersion" }
+# ai
+gdxAi = { module = "com.badlogicgames.gdx:gdx-ai", version.ref = "gdxAiVersion" }
+ktxAi = { module = "io.github.libktx:ktx-ai", version.ref = "ktxVersion" }
+# other ktx extensions
+ktxTiled = { module = "io.github.libktx:ktx-tiled", version.ref = "ktxVersion" }
+ktxPreferences = { module = "io.github.libktx:ktx-preferences", version.ref = "ktxVersion" }
+ktxI18n = { module = "io.github.libktx:ktx-i18n", version.ref = "ktxVersion" }
+# ecs
+fleks = { module = "io.github.quillraven.fleks:Fleks", version.ref = "fleksVersion" }
 
 [bundles]
-gdxLwjgl3Bundle = ["gdxBackendLwjgl3"]
 ktxBaseBundle = ["ktxActors", "ktxApp", "ktxAssets", "ktxCollections", "ktxGraphics", "ktxLog", "ktxMath", "ktxScene2d"]
+box2d = ["gdxBox2d", "ktxBox2d"]
+freetype = ["gdxFreetype", "ktxFreetype"]
+ai = ["gdxAi", "ktxAi"]

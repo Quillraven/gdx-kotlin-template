@@ -4,11 +4,15 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.bundles.gdxLwjgl3Bundle)
+    implementation(libs.gdxBackendLwjgl3)
     implementation(libs.gdxPlatform) {
-        artifact {
-            classifier = "natives-desktop"
-        }
+        artifact { classifier = "natives-desktop" }
+    }
+    implementation(libs.gdxBox2dPlatform) {
+        artifact { classifier = "natives-desktop" }
+    }
+    implementation(libs.gdxFreetypePlatform) {
+        artifact { classifier = "natives-desktop" }
     }
     implementation(project(":core"))
 }
