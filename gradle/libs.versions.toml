@@ -1,0 +1,22 @@
+[versions]
+kotlinVersion = "2.2.0"
+gdxVersion = "1.13.5"
+ktxVersion = "1.13.1-rc1"
+
+[libraries]
+kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
+gdx = { module = "com.badlogicgames.gdx:gdx", version.ref = "gdxVersion" }
+gdxBackendLwjgl3 = { module = "com.badlogicgames.gdx:gdx-backend-lwjgl3", version.ref = "gdxVersion" }
+gdxPlatform = { module = "com.badlogicgames.gdx:gdx-platform", version.ref = "gdxVersion" }
+ktxActors = { module = "io.github.libktx:ktx-actors", version.ref = "ktxVersion" }
+ktxApp = { module = "io.github.libktx:ktx-app", version.ref = "ktxVersion" }
+ktxAssets = { module = "io.github.libktx:ktx-assets", version.ref = "ktxVersion" }
+ktxCollections = { module = "io.github.libktx:ktx-collections", version.ref = "ktxVersion" }
+ktxGraphics = { module = "io.github.libktx:ktx-graphics", version.ref = "ktxVersion" }
+ktxLog = { module = "io.github.libktx:ktx-log", version.ref = "ktxVersion" }
+ktxMath = { module = "io.github.libktx:ktx-math", version.ref = "ktxVersion" }
+ktxScene2d = { module = "io.github.libktx:ktx-scene2d", version.ref = "ktxVersion" }
+
+[bundles]
+gdxLwjgl3Bundle = ["gdxBackendLwjgl3"]
+ktxBaseBundle = ["ktxActors", "ktxApp", "ktxAssets", "ktxCollections", "ktxGraphics", "ktxLog", "ktxMath", "ktxScene2d"]
