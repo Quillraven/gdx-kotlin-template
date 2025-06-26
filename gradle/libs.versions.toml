@@ -1,4 +1,5 @@
 [versions]
+jvmToolchainVersion = "17"
 kotlinVersion = "2.2.0"
 gdxVersion = "1.13.5"
 ktxVersion = "1.13.1-rc1"

@@ -5,8 +5,12 @@ plugins {
     `kotlin-dsl`
 }
 
+val versionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
+val jvmVersion = versionCatalog.findVersion("jvmToolchainVersion").get().toString()
+
+// JVM version for convention plugins defined in buildSrc
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(jvmVersion.toInt())
 }
 
 dependencies {

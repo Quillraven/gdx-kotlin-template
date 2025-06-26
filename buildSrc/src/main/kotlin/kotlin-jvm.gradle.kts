@@ -6,8 +6,12 @@ plugins {
     kotlin("jvm")
 }
 
+val versionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
+val jvmVersion = versionCatalog.findVersion("jvmToolchainVersion").get().toString()
+
+// JVM version defined for modules that use the kotlin-jvm convention plugin like core or lwjgl3
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(jvmVersion.toInt())
 }
 
 tasks.withType<Test>().configureEach {
