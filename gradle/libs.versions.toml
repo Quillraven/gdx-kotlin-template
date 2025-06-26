@@ -5,6 +5,9 @@ gdxVersion = "1.13.5"
 ktxVersion = "1.13.1-rc1"
 gdxAiVersion = "1.8.2"
 fleksVersion = "2.11"
+grettyVersion = "3.1.5"
+gdxTeaVmVersion = "1.2.1"
+teaVmVersion = "0.12.0"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
@@ -38,9 +41,23 @@ ktxPreferences = { module = "io.github.libktx:ktx-preferences", version.ref = "k
 ktxI18n = { module = "io.github.libktx:ktx-i18n", version.ref = "ktxVersion" }
 # ecs
 fleks = { module = "io.github.quillraven.fleks:Fleks", version.ref = "fleksVersion" }
+# teavm
+gdxTeaVmBackend = { module = "com.github.xpenatan.gdx-teavm:backend-teavm", version.ref = "gdxTeaVmVersion" }
+teaVmClasslib = { module = "org.teavm:teavm-classlib", version.ref = "teaVmVersion" }
+teaVmCore = { module = "org.teavm:teavm-core", version.ref = "teaVmVersion" }
+teaVmJsoApis = { module = "org.teavm:teavm-jso-apis", version.ref = "teaVmVersion" }
+teaVmJsoImpl = { module = "org.teavm:teavm-jso-impl", version.ref = "teaVmVersion" }
+teaVmJso = { module = "org.teavm:teavm-jso", version.ref = "teaVmVersion" }
+teaVmTooling = { module = "org.teavm:teavm-tooling", version.ref = "teaVmVersion" }
+gdxBox2dGwt = { module = "com.badlogicgames.gdx:gdx-box2d-gwt", version.ref = "gdxVersion" }
+gdxTeaVmFreetype = { module = "com.github.xpenatan.gdx-teavm:gdx-freetype-teavm", version.ref = "gdxTeaVmVersion" }
 
 [bundles]
 ktxBaseBundle = ["ktxActors", "ktxApp", "ktxAssets", "ktxCollections", "ktxGraphics", "ktxLog", "ktxMath", "ktxScene2d"]
-box2d = ["gdxBox2d", "ktxBox2d"]
-freetype = ["gdxFreetype", "ktxFreetype"]
-ai = ["gdxAi", "ktxAi"]
+box2dBundle = ["gdxBox2d", "ktxBox2d"]
+freetypeBundle = ["gdxFreetype", "ktxFreetype"]
+aiBundle = ["gdxAi", "ktxAi"]
+teaVmBundle = ["gdxTeaVmBackend", "teaVmClasslib", "teaVmCore", "teaVmJsoApis", "teaVmJsoImpl", "teaVmJso", "teaVmTooling"]
+
+[plugins]
+grettyGradlePlugin = { id = "org.gretty", version.ref = "grettyVersion" }

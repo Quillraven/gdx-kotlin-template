@@ -20,13 +20,6 @@ dependencies {
 group = "io.github"
 version = "1.0"
 
-sourceSets {
-    main {
-        // assets folder contains the resources of the game
-        resources.srcDir(rootProject.files("assets"))
-    }
-}
-
 application {
     applicationName = "GdxLwjgl3"
     mainClass = "io.github.Lwjgl3LauncherKt"

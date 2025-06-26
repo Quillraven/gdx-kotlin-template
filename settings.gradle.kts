@@ -8,6 +8,8 @@ dependencyResolutionManagement {
         maven { url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/") }
         // LibKTX Snapshots
         maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots/") }
+        // GDX TeaVM
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
@@ -18,5 +20,6 @@ plugins {
 
 include(":core")
 include(":lwjgl3")
+include(":teavm")
 
 rootProject.name = "gdx-template"
