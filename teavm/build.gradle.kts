@@ -19,7 +19,7 @@ val buildJavaScript by tasks.registering(JavaExec::class) {
     group = "teavm"
     dependsOn(tasks.classes)
     description = "Transpile bytecode to JavaScript via TeaVM"
-    mainClass = "io.github.TeaVMLauncherKt"
+    mainClass = "io.github.TeaVMBuilderKt"
     classpath = sourceSets.main.get().runtimeClasspath
 }
 
