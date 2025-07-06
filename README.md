@@ -1,23 +1,24 @@
-# gdx-template
+# Gdx Kotlin Template
 
-This project uses [Gradle](https://gradle.org/).
-To build and run the application, use the *Gradle* tool window by clicking the Gradle icon in the right-hand toolbar,
-or run it directly from the terminal:
+This project uses a modern [Gradle](https://gradle.org/) setup approach with Kotlin DSL,
+version catalog (see `gradle/libs.versions.toml`) and extracted build logic
+to convention plugins located in `buildSrc`.
+It also uses both a build cache and a configuration cache (see `gradle.properties`).
 
-* Run `./gradlew run` to build and run the application.
-* Run `./gradlew build` to only build the application.
-* Run `./gradlew check` to run all checks, including tests.
-* Run `./gradlew clean` to clean all build outputs.
+It is a starting point for any [LibGDX](https://github.com/libgdx/libgdx) Kotlin application
+with [LibKTX](https://github.com/libktx/ktx) extensions and provides two launchers:
 
-Note the usage of the Gradle Wrapper (`./gradlew`).
-This is the suggested way to use Gradle in production projects.
+- `Desktop` (=lwjgl3): `Lwjgl3Launcher.kt`
+- `TeaVM` (=browser): `TeaVMLauncher.kt`
 
-[Learn more about the Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html).
+To run `lwjgl3` just execute the `main` method of the launcher class or run:
 
-[Learn more about Gradle tasks](https://docs.gradle.org/current/userguide/command_line_interface.html#common_tasks).
+- `./gradlew lwjgl3:run`
 
-This project follows the suggested multi-module setup and consists of the `app` and `utils` subprojects.
-The shared build logic was extracted to a convention plugin located in `buildSrc`.
+To run `teavm` you first need to compile to Javascript before running it on `http://localhost:8080/`:
 
-This project uses a version catalog (see `gradle/libs.versions.toml`) to declare and version dependencies
-and both a build cache and a configuration cache (see `gradle.properties`).
+- `./gradlew teavm:buildJavaScript`
+- `./gradlew teavm:run`: automatically runs `buildJavaScript`
+
+This template can be configured
+using [Gdx-Quilly-Utils](https://quillraven.github.io/gdx-quilly-utils/gradle-kotlin-template).
