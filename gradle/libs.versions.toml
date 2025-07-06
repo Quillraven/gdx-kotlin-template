@@ -7,7 +7,7 @@ gdxAiVersion = "1.8.2"
 fleksVersion = "2.11"
 grettyVersion = "3.1.5"
 gdxTeaVmVersion = "1.2.1"
-teaVmVersion = "0.12.0"
+teaVmVersion = "0.12.2"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
