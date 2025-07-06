@@ -29,7 +29,7 @@ fun main() {
     tool.mainClass = "io.github.TeaVMLauncherKt"
     tool.optimizationLevel = TeaVMOptimizationLevel.ADVANCED
     tool.setObfuscated(true)
-    tool.targetType = TeaVMTargetType.JAVASCRIPT
-    // tool.targetType = TeaVMTargetType.WEBASSEMBLY_GC
+    // tool.targetType = TeaVMTargetType.JAVASCRIPT
+    tool.targetType = TeaVMTargetType.WEBASSEMBLY_GC
     TeaBuilder.build(tool)
 }
