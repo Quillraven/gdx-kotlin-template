@@ -2,10 +2,8 @@ dependencyResolutionManagement {
     @Suppress("UnstableApiUsage")
     repositories {
         mavenCentral()
-        // LibGDX Snapshots
+        // LibGDX + Fleks Snapshots
         maven { url = uri("https://central.sonatype.com/repository/maven-snapshots/") }
-        // Fleks Snapshots
-        maven { url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/") }
         // LibKTX Snapshots
         maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots/") }
         // GDX TeaVM
