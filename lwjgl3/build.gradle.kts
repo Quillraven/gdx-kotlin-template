@@ -5,16 +5,16 @@ plugins {
 
 dependencies {
     implementation(libs.gdxBackendLwjgl3)
-    implementation(libs.gdxPlatform) {
-        artifact { classifier = "natives-desktop" }
-    }
-    implementation(libs.gdxBox2dPlatform) {
-        artifact { classifier = "natives-desktop" }
-    }
-    implementation(libs.gdxFreetypePlatform) {
-        artifact { classifier = "natives-desktop" }
-    }
     implementation(project(":core"))
+    listOf(
+        libs.gdxPlatform,
+        libs.gdxBox2dPlatform,
+        libs.gdxFreetypePlatform
+    ).forEach {
+        runtimeOnly(it) {
+            artifact { classifier = "natives-desktop" }
+        }
+    }
 }
 
 group = "io.github"
