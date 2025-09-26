@@ -9,7 +9,7 @@ dependencies {
     listOf(
         libs.gdxPlatform,
         libs.gdxBox2dPlatform,
-        libs.gdxFreetypePlatform
+        libs.gdxFreetypePlatform,
     ).forEach {
         runtimeOnly(it) {
             artifact { classifier = "natives-desktop" }
