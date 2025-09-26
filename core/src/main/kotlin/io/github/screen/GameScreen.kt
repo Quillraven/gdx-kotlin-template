@@ -55,7 +55,7 @@ class GameScreen(
 
     override fun dispose() {
         texture.dispose()
-        log.info { "GameScreen resources dispoed" }
+        log.info { "GameScreen resources disposed" }
     }
 
     companion object {
