@@ -1,12 +1,12 @@
 [versions]
 jvmToolchainVersion = "17"
-kotlinVersion = "2.2.20"
-gdxVersion = "1.13.5"
+kotlinVersion = "2.2.21"
+gdxVersion = "1.14.0"
 ktxVersion = "1.13.1-rc1"
 gdxAiVersion = "1.8.2"
 fleksVersion = "2.12"
 grettyVersion = "3.1.8"
-gdxTeaVmVersion = "1.2.4"
+gdxTeaVmVersion = "1.3.1"
 teaVmVersion = "0.12.2"
 
 [libraries]
