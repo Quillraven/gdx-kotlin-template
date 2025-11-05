@@ -9,7 +9,7 @@ gretty {
 }
 
 dependencies {
-    implementation(libs.bundles.teaVmBundle)
+    implementation(libs.gdxTeaVmBackend)
     implementation(libs.gdxBox2dGwt)
     implementation(libs.gdxTeaVmFreetype)
     implementation(project(":core"))

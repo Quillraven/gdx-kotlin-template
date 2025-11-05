@@ -3,7 +3,7 @@ package io.github
 import com.github.xpenatan.gdx.backends.teavm.config.AssetFileHandle
 import com.github.xpenatan.gdx.backends.teavm.config.TeaBuildConfiguration
 import com.github.xpenatan.gdx.backends.teavm.config.TeaBuilder
-import com.github.xpenatan.gdx.backends.teavm.config.TeaTargetType
+import org.teavm.tooling.TeaVMTargetType
 import org.teavm.tooling.TeaVMTool
 import org.teavm.vm.TeaVMOptimizationLevel
 import java.io.File
@@ -27,7 +27,7 @@ fun main() {
     // TeaReflectionSupplier.addReflectionClass(FreeTypeFontGenerator::class.java)
 
     // teaBuildConfiguration.targetType = TeaTargetType.JAVASCRIPT
-    teaBuildConfiguration.targetType = TeaTargetType.WEBASSEMBLY
+    teaBuildConfiguration.targetType = TeaVMTargetType.WEBASSEMBLY_GC
     TeaBuilder.config(teaBuildConfiguration)
 
     val tool = TeaVMTool()
