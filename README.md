@@ -15,6 +15,12 @@ To run `lwjgl3` just execute the `main` method of the launcher class or run:
 
 - `./gradlew lwjgl3:run`
 
+[Construo](https://github.com/fourlastor-alexandria/construo) is used to package your game for distribution.
+To package for Linux or Windows run:
+
+- `./gradlew lwjgl3:packageLinuxX64`
+- `./gradlew lwjgl3:packageWinX64`
+
 To run `teavm` you first need to compile to Javascript before running it on `http://localhost:8080/`:
 
 - `./gradlew teavm:buildJavaScript`
