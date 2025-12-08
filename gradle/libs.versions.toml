@@ -7,6 +7,7 @@ gdxAiVersion = "1.8.2"
 fleksVersion = "2.12"
 grettyVersion = "3.1.8"
 gdxTeaVmVersion = "1.4.0"
+construoVersion = "2.1.0"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
@@ -53,3 +54,4 @@ aiBundle = ["gdxAi", "ktxAi"]
 
 [plugins]
 grettyGradlePlugin = { id = "org.gretty", version.ref = "grettyVersion" }
+construoGradlePlugin = { id = "io.github.fourlastor.construo", version.ref = "construoVersion" }
