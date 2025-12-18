@@ -1,6 +1,6 @@
 [versions]
-jvmToolchainVersion = "17"
-kotlinVersion = "2.2.21"
+jvmToolchainVersion = "25"
+kotlinVersion = "2.3.0"
 gdxVersion = "1.14.0"
 ktxVersion = "1.13.1-rc1"
 gdxAiVersion = "1.8.2"
