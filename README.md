@@ -21,10 +21,9 @@ To package for Linux or Windows run:
 - `./gradlew lwjgl3:packageLinuxX64`
 - `./gradlew lwjgl3:packageWinX64`
 
-To run `teavm` you first need to compile to Javascript before running it on `http://localhost:8080/`:
+To run `teavm` on `http://localhost:8080/` run:
 
-- `./gradlew teavm:buildJavaScript`
-- `./gradlew teavm:run`: automatically runs `buildJavaScript`
+- `./gradlew teavm:buildAndRun`
 
 This template can be configured
 using [Gdx-Quilly-Utils](https://quillraven.github.io/gdx-quilly-utils/gradle-kotlin-template).
