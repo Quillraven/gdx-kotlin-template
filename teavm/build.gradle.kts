@@ -12,7 +12,7 @@ dependencies {
 val buildAndRun by tasks.registering(JavaExec::class) {
     group = "teavm"
     dependsOn(tasks.classes)
-    description = "Transpile bytecode to JavaScript via TeaVM"
+    description = "Transpile bytecode to JavaScript via TeaVM and run it on localhost"
     mainClass = "io.github.TeaVMBuilderKt"
     classpath = sourceSets.main.get().runtimeClasspath
 }
