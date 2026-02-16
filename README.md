@@ -21,9 +21,12 @@ To package for Linux or Windows run:
 - `./gradlew lwjgl3:packageLinuxX64`
 - `./gradlew lwjgl3:packageWinX64`
 
-To run `teavm` on `http://localhost:8080/` run:
+For `teavm` there are four different tasks to build and optionally run it on `http://localhost:8080/`:
 
-- `./gradlew teavm:buildAndRun`
+- `./gradlew teavm:teavmDebugBuild`: build an unobfuscated version with source-mapping for browser debugging
+- `./gradlew teavm:teavmDebugRun`: run the debug build locally
+- `./gradlew teavm:teavmReleaseBuild`: build an obfuscated and optimized version
+- `./gradlew teavm:teavmReleaseRun`: run the release build locally
 
 This template can be configured
 using [Gdx-Quilly-Utils](https://quillraven.github.io/gdx-quilly-utils/gradle-kotlin-template).
