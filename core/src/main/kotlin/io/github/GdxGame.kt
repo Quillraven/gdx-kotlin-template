@@ -1,8 +1,11 @@
 package io.github
 
+import com.badlogic.gdx.Application
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.Stage
+import com.badlogic.gdx.utils.ScreenUtils
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.ScreenViewport
 import com.badlogic.gdx.utils.viewport.Viewport
@@ -18,6 +21,8 @@ class GdxGame : KtxGame<KtxScreen>() {
     val stage: Stage by lazy { Stage(uiViewport, batch) }
 
     override fun create() {
+        Gdx.app.logLevel = Application.LOG_DEBUG
+
         log.info { "Starting game" }
         addScreen(GameScreen(this))
         setScreen<GameScreen>()
@@ -27,6 +32,11 @@ class GdxGame : KtxGame<KtxScreen>() {
         gameViewport.update(width, height, true)
         uiViewport.update(width, height, true)
         super.resize(width, height)
+    }
+
+    override fun render() {
+        ScreenUtils.clear(0f, 0f, 0f, 1f, true)
+        currentScreen.render(Gdx.graphics.deltaTime.coerceIn(0f, 1 / 30f))
     }
 
     override fun dispose() {

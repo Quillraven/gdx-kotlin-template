@@ -7,6 +7,7 @@ fun main() {
     Lwjgl3Application(GdxGame(), Lwjgl3ApplicationConfiguration().apply {
         setTitle("GdxGame")
         setWindowedMode(800, 600)
+        setDecorated(true) // show/hide window title bar
         useVsync(true)
         setForegroundFPS(Lwjgl3ApplicationConfiguration.getDisplayMode().refreshRate + 1)
         setWindowIcon("logo-128.png", "logo-64.png", "logo-32.png")
