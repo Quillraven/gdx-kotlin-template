@@ -24,7 +24,7 @@ group = "io.github"
 version = "1.0"
 
 application {
-    applicationName = "GdxLwjgl3"
+    applicationName = "GdxGame"
     mainClass = "io.github.Lwjgl3LauncherKt"
 }
 
