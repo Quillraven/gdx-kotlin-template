@@ -7,16 +7,13 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
+import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.Align
 import com.badlogic.gdx.utils.viewport.Viewport
 import io.github.GdxGame
 import ktx.app.KtxScreen
 import ktx.graphics.use
 import ktx.log.logger
-import ktx.scene2d.actors
-import ktx.scene2d.defaultStyle
-import ktx.scene2d.label
-import ktx.scene2d.table
 
 class GameScreen(
     game: GdxGame,
@@ -30,16 +27,15 @@ class GameScreen(
         val skin = Skin().apply {
             add("default", Label.LabelStyle(BitmapFont(), Color.WHITE))
         }
-        stage.actors {
-            table(skin) {
+        stage.addActor(
+            Table(skin).apply {
                 setFillParent(true)
                 bottom()
-                label("Have fun!", defaultStyle, skin) {
-                    this.setAlignment(Align.center)
-                    it.growX()
-                }
+                add(Label("Have fun!", skin).apply {
+                    setAlignment(Align.center)
+                }).growX()
             }
-        }
+        )
     }
 
     override fun render(delta: Float) {
