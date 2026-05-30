@@ -30,6 +30,7 @@ application {
 
 tasks {
     jar {
+        archiveBaseName.set(application.applicationName)
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
         from(files(sourceSets.main.get().output.classesDirs))
