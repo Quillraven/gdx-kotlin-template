@@ -12,6 +12,9 @@ val jvmVersion = versionCatalog.findVersion("jvmToolchainVersion").get().toStrin
 // JVM version defined for modules that use the kotlin-jvm convention plugin like core or lwjgl3
 kotlin {
     jvmToolchain(jvmVersion.toInt())
+    compilerOptions {
+        freeCompilerArgs.add("-Xname-based-destructuring=complete")
+    }
 }
 
 tasks.withType<Test>().configureEach {
