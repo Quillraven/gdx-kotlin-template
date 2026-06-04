@@ -17,8 +17,8 @@ fun main(args: Array<String>) {
 
     val webBackend = WebBackend()
         .setHtmlTitle("GdxGame")
-        .setHtmlWidth(800)
-        .setHtmlHeight(600)
+        .setHtmlWidth(1280)
+        .setHtmlHeight(720)
         .setStartJettyAfterBuild(startJetty)
         .setJettyPort(8080)
         // set 'webAssembly' to false for creating JAVASCRIPT target.

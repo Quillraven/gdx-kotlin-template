@@ -6,7 +6,7 @@ import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration
 fun main() {
     Lwjgl3Application(GdxGame(), Lwjgl3ApplicationConfiguration().apply {
         setTitle("GdxGame")
-        setWindowedMode(800, 600)
+        setWindowedMode(1280, 720)
         setDecorated(true) // show/hide window title bar
         useVsync(true)
         setForegroundFPS(Lwjgl3ApplicationConfiguration.getDisplayMode().refreshRate + 1)
