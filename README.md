@@ -23,10 +23,10 @@ To package for Linux or Windows run:
 
 For `teavm` there are four different tasks to build and optionally run it on `http://localhost:8080/`:
 
-- `./gradlew teavm:teavmDebugBuild`: build an unobfuscated version with source-mapping for browser debugging
-- `./gradlew teavm:teavmDebugRun`: run the debug build locally
-- `./gradlew teavm:teavmReleaseBuild`: build an obfuscated and optimized version
-- `./gradlew teavm:teavmReleaseRun`: run the release build locally
+- `./gradlew teavm:gdx_teavm_web_js_build`
+- `./gradlew teavm:gdx_teavm_web_js_run`
+- `./gradlew teavm:gdx_teavm_web_wasm_build`
+- `./gradlew teavm:gdx_teavm_web_wasm_run`
 
 This template can be configured
 using [Gdx-Quilly-Utils](https://quillraven.github.io/gdx-quilly-utils/gradle-kotlin-template).

@@ -11,6 +11,14 @@ dependencyResolutionManagement {
     }
 }
 
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        maven("https://central.sonatype.com/repository/maven-snapshots/")
+    }
+}
+
 plugins {
     // Use the Foojay Toolchains plugin to automatically download JDKs required by subprojects.
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"

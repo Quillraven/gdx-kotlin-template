@@ -1,12 +1,12 @@
 [versions]
 jvmToolchainVersion = "25"
-kotlinVersion = "2.4.0"
+kotlinVersion = "2.4.10"
 gdxVersion = "1.14.2"
 ktxVersion = "1.13.1-rc1"
 gdxAiVersion = "1.8.2"
 fleksVersion = "2.14"
-gdxTeaVmVersion = "1.5.6"
-construoVersion = "2.1.0"
+gdxTeaVmVersion = "1.6.0"
+construoVersion = "2.2.0"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
@@ -41,9 +41,8 @@ ktxI18n = { module = "io.github.libktx:ktx-i18n", version.ref = "ktxVersion" }
 # ecs
 fleks = { module = "io.github.quillraven.fleks:Fleks", version.ref = "fleksVersion" }
 # teavm
-gdxTeaVmBackend = { module = "com.github.xpenatan.gdx-teavm:backend-web", version.ref = "gdxTeaVmVersion" }
 gdxBox2dGwt = { module = "com.badlogicgames.gdx:gdx-box2d-gwt", version.ref = "gdxVersion" }
-gdxTeaVmFreetype = { module = "com.github.xpenatan.gdx-teavm:gdx-freetype-teavm", version.ref = "gdxTeaVmVersion" }
+gdxTeaVmFreetype = { module = "com.github.xpenatan.gdx-teavm:gdx-freetype-web", version.ref = "gdxTeaVmVersion" }
 
 [bundles]
 ktxBaseBundle = ["ktxActors", "ktxApp", "ktxAssets", "ktxCollections", "ktxGraphics", "ktxLog", "ktxMath", "ktxScene2d"]
@@ -53,3 +52,4 @@ aiBundle = ["gdxAi", "ktxAi"]
 
 [plugins]
 construoGradlePlugin = { id = "io.github.fourlastor.construo", version.ref = "construoVersion" }
+gdxTeaVmPlugin = { id = "com.github.xpenatan.gdx-teavm", version.ref = "gdxTeaVmVersion" }
