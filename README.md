@@ -2,7 +2,7 @@
 
 This project uses a modern [Gradle](https://gradle.org/) setup approach with Kotlin DSL,
 version catalog (see `gradle/libs.versions.toml`) and extracted build logic
-to convention plugins located in `buildSrc`.
+to convention plugins located in `build-logic`.
 It also uses both a build cache and a configuration cache (see `gradle.properties`).
 
 It is a starting point for any [LibGDX](https://github.com/libgdx/libgdx) Kotlin application

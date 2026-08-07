@@ -1,3 +1,12 @@
+pluginManagement {
+    includeBuild("build-logic")
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        maven("https://central.sonatype.com/repository/maven-snapshots/")
+    }
+}
+
 dependencyResolutionManagement {
     @Suppress("UnstableApiUsage")
     repositories {
@@ -14,14 +23,6 @@ dependencyResolutionManagement {
         }
         // GDX TeaVM
         maven { url = uri("https://jitpack.io") }
-    }
-}
-
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        maven("https://central.sonatype.com/repository/maven-snapshots/")
     }
 }
 

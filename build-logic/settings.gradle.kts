@@ -1,5 +1,4 @@
 dependencyResolutionManagement {
-    // Use Maven Central and the Gradle Plugin Portal for resolving dependencies in the shared build logic (`buildSrc`) project.
     @Suppress("UnstableApiUsage")
     repositories {
         mavenCentral()
@@ -13,4 +12,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "buildSrc"
+rootProject.name = "build-logic"

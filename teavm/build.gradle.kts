@@ -1,5 +1,5 @@
 plugins {
-    buildsrc.convention.`kotlin-jvm`
+    id("kotlin-jvm")
     alias(libs.plugins.gdxTeaVmPlugin)
 }
 

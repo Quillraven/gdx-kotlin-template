@@ -1,7 +1,7 @@
 import io.github.fourlastor.construo.Target
 
 plugins {
-    buildsrc.convention.`kotlin-jvm`
+    id("kotlin-jvm")
     application
     alias(libs.plugins.construoGradlePlugin)
 }

@@ -5,7 +5,7 @@ plugins {
     `kotlin-dsl`
 }
 
-// JVM version for convention plugins defined in buildSrc
+// JVM version for convention plugins defined in build-logic
 kotlin {
     jvmToolchain(libs.versions.jvmToolchainVersion.get().toInt())
 }
