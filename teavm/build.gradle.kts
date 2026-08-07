@@ -29,5 +29,9 @@ gdxTeaVM {
         htmlHeight.set(720)
         serverPort.set(8080)
         obfuscated.set(false)
+
+        // wasm generation sometimes needs more memory than Gradle's default 512 MiB daemon heap
+        outOfProcess = true
+        processMemory = 1024
     }
 }
