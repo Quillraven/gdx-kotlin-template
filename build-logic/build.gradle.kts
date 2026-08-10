@@ -11,5 +11,8 @@ kotlin {
 }
 
 dependencies {
-    implementation(libs.kotlinGradlePlugin)
+    // compileOnly because the Kotlin Gradle plugin is provided at runtime by the
+    // root project (see the root build.gradle.kts). Using implementation would load
+    // the plugin multiple times via build-logic's classloader.
+    compileOnly(libs.kotlinGradlePlugin)
 }

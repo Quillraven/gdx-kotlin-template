@@ -51,5 +51,6 @@ freetypeBundle = ["gdxFreetype", "ktxFreetype"]
 aiBundle = ["gdxAi", "ktxAi"]
 
 [plugins]
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
 construoGradlePlugin = { id = "io.github.fourlastor.construo", version.ref = "construoVersion" }
 gdxTeaVmPlugin = { id = "com.github.xpenatan.gdx-teavm", version.ref = "gdxTeaVmVersion" }
