@@ -2,7 +2,7 @@
 jvmToolchainVersion = "25"
 kotlinVersion = "2.4.10"
 gdxVersion = "1.14.2"
-ktxVersion = "1.13.1-rc1"
+ktxVersion = "1.14.2-rc1"
 gdxAiVersion = "1.8.2"
 fleksVersion = "2.14"
 gdxTeaVmVersion = "1.6.0"
@@ -15,29 +15,29 @@ gdx = { module = "com.badlogicgames.gdx:gdx", version.ref = "gdxVersion" }
 gdxBackendLwjgl3 = { module = "com.badlogicgames.gdx:gdx-backend-lwjgl3", version.ref = "gdxVersion" }
 gdxPlatform = { module = "com.badlogicgames.gdx:gdx-platform", version.ref = "gdxVersion" }
 # ktx base
-ktxActors = { module = "io.github.libktx:ktx-actors", version.ref = "ktxVersion" }
-ktxApp = { module = "io.github.libktx:ktx-app", version.ref = "ktxVersion" }
-ktxAssets = { module = "io.github.libktx:ktx-assets", version.ref = "ktxVersion" }
-ktxCollections = { module = "io.github.libktx:ktx-collections", version.ref = "ktxVersion" }
-ktxGraphics = { module = "io.github.libktx:ktx-graphics", version.ref = "ktxVersion" }
-ktxLog = { module = "io.github.libktx:ktx-log", version.ref = "ktxVersion" }
-ktxMath = { module = "io.github.libktx:ktx-math", version.ref = "ktxVersion" }
-ktxScene2d = { module = "io.github.libktx:ktx-scene2d", version.ref = "ktxVersion" }
+ktxActors = { module = "io.github.quillraven.libktx:ktx-actors", version.ref = "ktxVersion" }
+ktxApp = { module = "io.github.quillraven.libktx:ktx-app", version.ref = "ktxVersion" }
+ktxAssets = { module = "io.github.quillraven.libktx:ktx-assets", version.ref = "ktxVersion" }
+ktxCollections = { module = "io.github.quillraven.libktx:ktx-collections", version.ref = "ktxVersion" }
+ktxGraphics = { module = "io.github.quillraven.libktx:ktx-graphics", version.ref = "ktxVersion" }
+ktxLog = { module = "io.github.quillraven.libktx:ktx-log", version.ref = "ktxVersion" }
+ktxMath = { module = "io.github.quillraven.libktx:ktx-math", version.ref = "ktxVersion" }
+ktxScene2d = { module = "io.github.quillraven.libktx:ktx-scene2d", version.ref = "ktxVersion" }
 # box2d
 gdxBox2dPlatform = { module = "com.badlogicgames.gdx:gdx-box2d-platform", version.ref = "gdxVersion" }
 gdxBox2d = { module = "com.badlogicgames.gdx:gdx-box2d", version.ref = "gdxVersion" }
-ktxBox2d = { module = "io.github.libktx:ktx-box2d", version.ref = "ktxVersion" }
+ktxBox2d = { module = "io.github.quillraven.libktx:ktx-box2d", version.ref = "ktxVersion" }
 # freetype
 gdxFreetypePlatform = { module = "com.badlogicgames.gdx:gdx-freetype-platform", version.ref = "gdxVersion" }
 gdxFreetype = { module = "com.badlogicgames.gdx:gdx-freetype", version.ref = "gdxVersion" }
-ktxFreetype = { module = "io.github.libktx:ktx-freetype", version.ref = "ktxVersion" }
+ktxFreetype = { module = "io.github.quillraven.libktx:ktx-freetype", version.ref = "ktxVersion" }
 # ai
 gdxAi = { module = "com.badlogicgames.gdx:gdx-ai", version.ref = "gdxAiVersion" }
-ktxAi = { module = "io.github.libktx:ktx-ai", version.ref = "ktxVersion" }
+ktxAi = { module = "io.github.quillraven.libktx:ktx-ai", version.ref = "ktxVersion" }
 # other ktx extensions
-ktxTiled = { module = "io.github.libktx:ktx-tiled", version.ref = "ktxVersion" }
-ktxPreferences = { module = "io.github.libktx:ktx-preferences", version.ref = "ktxVersion" }
-ktxI18n = { module = "io.github.libktx:ktx-i18n", version.ref = "ktxVersion" }
+ktxTiled = { module = "io.github.quillraven.libktx:ktx-tiled", version.ref = "ktxVersion" }
+ktxPreferences = { module = "io.github.quillraven.libktx:ktx-preferences", version.ref = "ktxVersion" }
+ktxI18n = { module = "io.github.quillraven.libktx:ktx-i18n", version.ref = "ktxVersion" }
 # ecs
 fleks = { module = "io.github.quillraven.fleks:Fleks", version.ref = "fleksVersion" }
 # teavm
