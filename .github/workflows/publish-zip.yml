@@ -1,0 +1,27 @@
+name: Publish Template Zip
+
+on:
+  push:
+    branches: [master]
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create zip (same as GitHub Download ZIP button)
+        run: |
+          mkdir -p public
+          git archive --format=zip -o public/gdx-kotlin-template-master.zip --prefix=gdx-kotlin-template-master/ HEAD
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          keep_files: false
