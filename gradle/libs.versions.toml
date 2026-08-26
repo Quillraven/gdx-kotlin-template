@@ -5,7 +5,7 @@ gdxVersion = "1.14.2"
 ktxVersion = "1.14.2-rc1"
 gdxAiVersion = "1.8.2"
 fleksVersion = "2.14"
-gdxTeaVmVersion = "1.6.0"
+gdxTeaVmVersion = "1.6.2"
 construoVersion = "2.2.1"
 
 [libraries]
