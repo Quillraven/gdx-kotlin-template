@@ -15,6 +15,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.Align
 import com.badlogic.gdx.utils.viewport.Viewport
 import com.github.tommyettinger.freetypist.FreeTypistSkin
+// import com.github.tommyettinger.textra.Font
+// import com.github.tommyettinger.textra.Styles
 import com.github.tommyettinger.textra.TypingLabel
 import io.github.GdxGame
 import ktx.actors.plusAssign
@@ -41,6 +43,7 @@ class GameScreen(
         // return Skin().apply {
         //    add("defaultFont", BitmapFont())
         //    add("default", Label.LabelStyle(getFont("defaultFont"), Color.WHITE))
+        //    add("default", Styles.LabelStyle(Font(getFont("defaultFont")), Color.WHITE))
         // }
     }
 
