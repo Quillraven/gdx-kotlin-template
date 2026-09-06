@@ -3,21 +3,25 @@ package io.github.screen
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Batch
-import com.badlogic.gdx.graphics.g2d.BitmapFont
+// import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType
+import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.actions.Actions.moveBy
-import com.badlogic.gdx.scenes.scene2d.ui.Label
+// import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.Align
 import com.badlogic.gdx.utils.viewport.Viewport
+import com.github.tommyettinger.freetypist.FreeTypistSkin
+import com.github.tommyettinger.textra.TypingLabel
 import io.github.GdxGame
 import ktx.actors.plusAssign
 import ktx.actors.repeatForever
 import ktx.actors.then
 import ktx.app.KtxScreen
+import ktx.assets.toInternalFile
 import ktx.graphics.use
 import ktx.log.logger
 
@@ -29,9 +33,15 @@ class GameScreen(
     private val stage: Stage = game.stage,
 ) : KtxScreen {
     private val texture = Texture("logo.png")
-    private val skin = Skin().apply {
-        add("defaultFont", BitmapFont())
-        add("default", Label.LabelStyle(getFont("defaultFont"), Color.WHITE))
+    private val skin = createSkin()
+
+    private fun createSkin(): Skin {
+        return FreeTypistSkin("skin.json".toInternalFile())
+        // the following lines are for normal scene2d skin without TextraTypist/FreeTypist
+        // return Skin().apply {
+        //    add("defaultFont", BitmapFont())
+        //    add("default", Label.LabelStyle(getFont("defaultFont"), Color.WHITE))
+        // }
     }
 
     override fun show() {
@@ -39,14 +49,22 @@ class GameScreen(
             Table(skin).apply {
                 setFillParent(true)
                 bottom()
-                add(Label("Have fun!", skin).apply {
-                    setAlignment(Align.center)
-
+                add(createLabel().apply {
                     val action = (moveBy(-100f, 0f, 2f) then moveBy(100f, 0f, 2f)).repeatForever()
                     this += action
                 }).growX().padBottom(20f)
             }
         )
+    }
+
+    private fun createLabel(): Actor {
+        return TypingLabel("{WAVE}{RAINBOW}Have fun!", skin).apply {
+            alignment = Align.center
+        }
+        // the following lines are for normal scene2d skin without TextraTypist/FreeTypist
+        // return Label("Have fun!", skin).apply {
+        //     setAlignment(Align.center)
+        // }
     }
 
     override fun render(delta: Float) {

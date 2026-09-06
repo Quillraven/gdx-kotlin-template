@@ -7,6 +7,8 @@ gdxAiVersion = "1.8.2"
 fleksVersion = "2.15"
 gdxTeaVmVersion = "1.6.2"
 construoVersion = "2.2.1"
+textraTypistVersion = "2.4.4"
+freeTypistVersion = "2.4.4.0"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
@@ -43,6 +45,10 @@ fleks = { module = "io.github.quillraven.fleks:Fleks", version.ref = "fleksVersi
 # teavm
 gdxBox2dGwt = { module = "com.badlogicgames.gdx:gdx-box2d-gwt", version.ref = "gdxVersion" }
 gdxTeaVmFreetype = { module = "com.github.xpenatan.gdx-teavm:gdx-freetype-web", version.ref = "gdxTeaVmVersion" }
+# textratypist - a typing label for scene2d
+textraTypist = { module = "com.github.tommyettinger:textratypist", version.ref = "textraTypistVersion" }
+# freetypist - FreeTypeSkin as drop-in replacement for normal Skin when using skin composer skins
+freeTypist = { module = "com.github.tommyettinger:freetypist", version.ref = "freeTypistVersion" }
 
 [bundles]
 ktxBaseBundle = ["ktxActors", "ktxApp", "ktxAssets", "ktxCollections", "ktxGraphics", "ktxLog", "ktxMath", "ktxScene2d"]

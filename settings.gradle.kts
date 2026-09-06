@@ -16,7 +16,7 @@ dependencyResolutionManagement {
             url = uri("https://central.sonatype.com/repository/maven-snapshots/")
             mavenContent { snapshotsOnly() }
         }
-        // GDX TeaVM
+        // GDX TeaVM, Stripe FreeTypeSkin, TextraTypist, ...
         maven { url = uri("https://jitpack.io") }
     }
 }
