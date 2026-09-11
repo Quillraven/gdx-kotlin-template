@@ -30,3 +30,15 @@ For `teavm` there are four different tasks to build and optionally run it on `ht
 
 This template can be configured
 using [Gdx-Quilly-Utils](https://quillraven.github.io/gdx-quilly-utils/gradle-kotlin-template).
+
+----
+
+### Info about using JDK 24+
+
+When running `Lwjgl3Launcher` main method from your IDE it most likely ignores the `applicationDefaultJvmArgs`
+specified in the `build.gradle.kts` file of the `lwjgl3` module. 
+To silence some warnings, add those VM options manually to your run configuration:
+```
+--enable-native-access=ALL-UNNAMED
+--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+```

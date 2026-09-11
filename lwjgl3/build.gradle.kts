@@ -18,6 +18,22 @@ dependencies {
             artifact { classifier = "natives-desktop" }
         }
     }
+
+    // constraints can be removed with the next LibGDX version which defaults to 3.4.3+
+    constraints {
+        listOf(
+            "org.lwjgl:lwjgl",
+            "org.lwjgl:lwjgl-glfw",
+            "org.lwjgl:lwjgl-jemalloc",
+            "org.lwjgl:lwjgl-openal",
+            "org.lwjgl:lwjgl-opengl",
+            "org.lwjgl:lwjgl-stb",
+        ).forEach {
+            implementation(it) {
+                version { strictly("3.4.3") }
+            }
+        }
+    }
 }
 
 group = "io.github"
@@ -26,6 +42,13 @@ version = "1.0"
 application {
     applicationName = "GdxGame"
     mainClass = "io.github.Lwjgl3LauncherKt"
+    // Silence JDK 24+ warnings:
+    //  - libGDX' SharedLibraryLoader calls System.load -> needs --enable-native-access
+    //  - enable LWJGL's jdk.internal.misc.Unsafe backend instead of the deprecated sun.misc.Unsafe
+    applicationDefaultJvmArgs = listOf(
+        "--enable-native-access=ALL-UNNAMED",
+        "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED",
+    )
 }
 
 tasks {
