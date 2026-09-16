@@ -7,6 +7,7 @@ gdxAiVersion = "1.8.2"
 fleksVersion = "2.15"
 gdxTeaVmVersion = "1.6.2"
 construoVersion = "2.2.1"
+kotlinxSerializationVersion = "1.12.0-RC"
 textraTypistVersion = "2.5.0"
 freeTypistVersion = "2.5.0.0"
 
@@ -49,6 +50,8 @@ gdxTeaVmFreetype = { module = "com.github.xpenatan.gdx-teavm:gdx-freetype-web", 
 textraTypist = { module = "com.github.tommyettinger:textratypist", version.ref = "textraTypistVersion" }
 # freetypist - FreeTypeSkin as drop-in replacement for normal Skin when using skin composer skins
 freeTypist = { module = "com.github.tommyettinger:freetypist", version.ref = "freeTypistVersion" }
+# serialization
+kotlinxSerializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationVersion" }
 
 [bundles]
 ktxBaseBundle = ["ktxActors", "ktxApp", "ktxAssets", "ktxCollections", "ktxGraphics", "ktxLog", "ktxMath", "ktxScene2d"]
@@ -58,5 +61,6 @@ aiBundle = ["gdxAi", "ktxAi"]
 
 [plugins]
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinVersion" }
 construoGradlePlugin = { id = "io.github.fourlastor.construo", version.ref = "construoVersion" }
 gdxTeaVmPlugin = { id = "com.github.xpenatan.gdx-teavm", version.ref = "gdxTeaVmVersion" }

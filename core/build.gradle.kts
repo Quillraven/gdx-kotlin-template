@@ -1,5 +1,6 @@
 plugins {
     id("kotlin-jvm")
+    alias(libs.plugins.kotlinSerialization)
 }
 
 sourceSets {
@@ -12,6 +13,7 @@ sourceSets {
 dependencies {
     api(libs.gdx) // requires API to correctly expose Disposable for launcher classes (TeaVM)
     api(libs.bundles.ktxBaseBundle) // requires API to correctly expose ApplicationListener for launcher classes
+    api(libs.kotlinxSerializationJson)
     implementation(libs.bundles.box2dBundle)
     implementation(libs.bundles.freetypeBundle)
     implementation(libs.bundles.aiBundle)
