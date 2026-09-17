@@ -70,6 +70,20 @@ construo {
     // human-readable name, used for example in the `.app` name for macOS
     humanName.set(application.applicationName)
 
+    jlink {
+        // don't guess the modules using jdeps, tell jlink explicitly what to package
+        guessModulesFromJar.set(false)
+        modules.addAll("java.base", "java.management", "java.desktop", "jdk.unsupported")
+    }
+
+    roast {
+        // this attaches the vm startup options directly to the final game launcher
+        vmArgs.addAll(
+            "--enable-native-access=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        )
+    }
+
     targets {
         create<Target.Linux>("linuxX64") {
             architecture.set(Target.Architecture.X86_64)
