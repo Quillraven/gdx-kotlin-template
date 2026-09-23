@@ -29,5 +29,6 @@ plugins {
 include(":core")
 include(":lwjgl3")
 include(":teavm")
+include(":tool")
 
 rootProject.name = "gdx-template"

@@ -32,6 +32,14 @@ For `teavm` there are four different tasks to build and optionally run it on `ht
 - `./gradlew teavm:gdx_teavm_web_wasm_build`
 - `./gradlew teavm:gdx_teavm_web_wasm_run`
 
+The `tool` module is meant for project related tools. It comes with a texture packer as
+an example Gradle task and implementation:
+
+- `./gradlew tool:packTextures`
+
+The atlas settings are optimized for pixelart (e.g. nearest neighbor filtering). For other
+types of games you should adjust them accordingly.
+
 ----
 
 ### Info about using JDK 24+

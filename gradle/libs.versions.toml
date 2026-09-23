@@ -17,6 +17,7 @@ kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", ver
 gdx = { module = "com.badlogicgames.gdx:gdx", version.ref = "gdxVersion" }
 gdxBackendLwjgl3 = { module = "com.badlogicgames.gdx:gdx-backend-lwjgl3", version.ref = "gdxVersion" }
 gdxPlatform = { module = "com.badlogicgames.gdx:gdx-platform", version.ref = "gdxVersion" }
+gdxTools = { module = "com.badlogicgames.gdx:gdx-tools", version.ref = "gdxVersion" }
 # ktx base
 ktxActors = { module = "io.github.quillraven.libktx:ktx-actors", version.ref = "ktxVersion" }
 ktxApp = { module = "io.github.quillraven.libktx:ktx-app", version.ref = "ktxVersion" }
