@@ -9,6 +9,7 @@ plugins {
 dependencies {
     implementation(libs.gdxBackendLwjgl3)
     implementation(project(":core"))
+    implementation(libs.gdxControllersDesktop)
     listOf(
         libs.gdxPlatform,
         libs.gdxBox2dPlatform,

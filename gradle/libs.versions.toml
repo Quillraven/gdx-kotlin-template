@@ -10,6 +10,7 @@ construoVersion = "2.2.1"
 kotlinxSerializationVersion = "1.12.0-RC"
 textraTypistVersion = "2.5.0"
 freeTypistVersion = "2.5.0.0"
+gdxControllersVersion = "2.2.4"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
@@ -53,6 +54,10 @@ textraTypist = { module = "com.github.tommyettinger:textratypist", version.ref =
 freeTypist = { module = "com.github.tommyettinger:freetypist", version.ref = "freeTypistVersion" }
 # serialization
 kotlinxSerializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationVersion" }
+# gdx controllers
+gdxControllersCore = { module = "com.badlogicgames.gdx-controllers:gdx-controllers-core", version.ref = "gdxControllersVersion" }
+gdxTeaVmControllers = { module = "com.github.xpenatan.gdx-teavm:gdx-controllers-web", version.ref = "gdxTeaVmVersion" }
+gdxControllersDesktop = { module = "com.badlogicgames.gdx-controllers:gdx-controllers-desktop", version.ref = "gdxControllersVersion" }
 
 [bundles]
 ktxBaseBundle = ["ktxActors", "ktxApp", "ktxAssets", "ktxCollections", "ktxGraphics", "ktxLog", "ktxMath", "ktxScene2d"]
