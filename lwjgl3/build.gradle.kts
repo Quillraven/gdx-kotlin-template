@@ -9,6 +9,7 @@ plugins {
 dependencies {
     implementation(libs.gdxBackendLwjgl3)
     implementation(project(":core"))
+    implementation(libs.gdxControllersDesktop)
     listOf(
         libs.gdxPlatform,
         libs.gdxBox2dPlatform,
@@ -60,7 +61,14 @@ tasks {
         from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
 
         manifest {
-            attributes["Main-Class"] = application.mainClass
+            attributes(
+                // Enabling native access is good for JARs run by Java 24 or later.
+                // Setting Multi-Release to true allows LWJGL3 to use different classes on recent Java versions.
+                "Main-Class" to application.mainClass,
+                "Enable-Native-Access" to "ALL-UNNAMED",
+                "Multi-Release" to "true",
+                "Add-Exports" to "java.base/jdk.internal.misc",
+            )
         }
     }
 }

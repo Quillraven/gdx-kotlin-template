@@ -34,7 +34,7 @@ class GameScreen(
     private val shapeRenderer: ShapeRenderer = game.shapeRenderer,
     private val stage: Stage = game.stage,
 ) : KtxScreen {
-    private val texture = Texture("logo.png")
+    private val texture = Texture("graphics/logo.png")
     private val skin = createSkin()
 
     private fun createSkin(): Skin {

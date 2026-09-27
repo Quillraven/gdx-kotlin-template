@@ -1,5 +1,9 @@
 # Gdx Kotlin Template
 
+> **Gdx-Quilly-Utils:** this template ships with everything included. If you want to
+> strip it down to only what your own project needs, configure it via
+> [Gdx-Quilly-Utils](https://quillraven.github.io/gdx-quilly-utils/gradle-kotlin-template).
+
 This project uses a modern [Gradle](https://gradle.org/) setup approach with Kotlin DSL,
 version catalog (see `gradle/libs.versions.toml`) and extracted build logic
 to convention plugins located in `build-logic`.
@@ -28,8 +32,13 @@ For `teavm` there are four different tasks to build and optionally run it on `ht
 - `./gradlew teavm:gdx_teavm_web_wasm_build`
 - `./gradlew teavm:gdx_teavm_web_wasm_run`
 
-This template can be configured
-using [Gdx-Quilly-Utils](https://quillraven.github.io/gdx-quilly-utils/gradle-kotlin-template).
+The `tool` module is meant for project related tools. It comes with a texture packer as
+an example Gradle task and implementation:
+
+- `./gradlew tool:packTextures`
+
+The atlas settings are optimized for pixelart (e.g. nearest neighbor filtering). For other
+types of games you should adjust them accordingly.
 
 ----
 

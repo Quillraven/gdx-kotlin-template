@@ -23,6 +23,7 @@ dependencies {
     implementation(libs.fleks)
     implementation(libs.textraTypist)
     implementation(libs.freeTypist)
+    implementation(libs.gdxControllersCore)
 
     testImplementation(kotlin("test"))
 }

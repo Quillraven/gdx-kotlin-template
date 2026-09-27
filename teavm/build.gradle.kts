@@ -6,6 +6,7 @@ plugins {
 dependencies {
     implementation(libs.gdxBox2dGwt)
     implementation(libs.gdxTeaVmFreetype)
+    implementation(libs.gdxTeaVmControllers)
     implementation(project(":core"))
 }
 

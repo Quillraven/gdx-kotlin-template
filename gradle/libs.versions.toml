@@ -6,10 +6,11 @@ ktxVersion = "1.14.2-rc2"
 gdxAiVersion = "1.8.2"
 fleksVersion = "2.15"
 gdxTeaVmVersion = "1.6.2"
-construoVersion = "2.2.1"
+construoVersion = "2.2.2"
 kotlinxSerializationVersion = "1.12.0-RC"
 textraTypistVersion = "2.5.0"
 freeTypistVersion = "2.5.0.0"
+gdxControllersVersion = "2.2.4"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
@@ -17,6 +18,7 @@ kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", ver
 gdx = { module = "com.badlogicgames.gdx:gdx", version.ref = "gdxVersion" }
 gdxBackendLwjgl3 = { module = "com.badlogicgames.gdx:gdx-backend-lwjgl3", version.ref = "gdxVersion" }
 gdxPlatform = { module = "com.badlogicgames.gdx:gdx-platform", version.ref = "gdxVersion" }
+gdxTools = { module = "com.badlogicgames.gdx:gdx-tools", version.ref = "gdxVersion" }
 # ktx base
 ktxActors = { module = "io.github.quillraven.libktx:ktx-actors", version.ref = "ktxVersion" }
 ktxApp = { module = "io.github.quillraven.libktx:ktx-app", version.ref = "ktxVersion" }
@@ -52,6 +54,10 @@ textraTypist = { module = "com.github.tommyettinger:textratypist", version.ref =
 freeTypist = { module = "com.github.tommyettinger:freetypist", version.ref = "freeTypistVersion" }
 # serialization
 kotlinxSerializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationVersion" }
+# gdx controllers
+gdxControllersCore = { module = "com.badlogicgames.gdx-controllers:gdx-controllers-core", version.ref = "gdxControllersVersion" }
+gdxTeaVmControllers = { module = "com.github.xpenatan.gdx-teavm:gdx-controllers-web", version.ref = "gdxTeaVmVersion" }
+gdxControllersDesktop = { module = "com.badlogicgames.gdx-controllers:gdx-controllers-desktop", version.ref = "gdxControllersVersion" }
 
 [bundles]
 ktxBaseBundle = ["ktxActors", "ktxApp", "ktxAssets", "ktxCollections", "ktxGraphics", "ktxLog", "ktxMath", "ktxScene2d"]
