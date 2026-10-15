@@ -10,6 +10,12 @@ kotlin {
     jvmToolchain(libs.versions.jvmToolchainVersion.get().toInt())
 }
 
+java {
+    toolchain {
+        vendor.set(JvmVendorSpec.AZUL)
+    }
+}
+
 dependencies {
     // compileOnly because the Kotlin Gradle plugin is provided at runtime by the
     // root project (see the root build.gradle.kts). Using implementation would load
