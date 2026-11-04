@@ -40,16 +40,20 @@ dependencies {
 group = "io.github"
 version = "1.0"
 
+// Silence JDK 24+ warnings:
+//  - libGDX' SharedLibraryLoader calls System.load -> needs --enable-native-access
+//  - enable LWJGL's jdk.internal.misc.Unsafe backend instead of the deprecated sun.misc.Unsafe
+// Used by the Gradle start scripts / run task (applicationDefaultJvmArgs) and by the Construo packages (roast.vmArgs).
+// The JAR manifest below only covers `java -jar`.
+val gameJvmArgs = listOf(
+    "--enable-native-access=ALL-UNNAMED",
+    "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED",
+)
+
 application {
     applicationName = "GdxGame"
     mainClass = "io.github.Lwjgl3LauncherKt"
-    // Silence JDK 24+ warnings:
-    //  - libGDX' SharedLibraryLoader calls System.load -> needs --enable-native-access
-    //  - enable LWJGL's jdk.internal.misc.Unsafe backend instead of the deprecated sun.misc.Unsafe
-    applicationDefaultJvmArgs = listOf(
-        "--enable-native-access=ALL-UNNAMED",
-        "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED",
-    )
+    applicationDefaultJvmArgs = gameJvmArgs
 }
 
 tasks {
@@ -58,7 +62,12 @@ tasks {
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
         from(files(sourceSets.main.get().output.classesDirs))
-        from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+        // resolve the classpath lazily at execution time instead of during configuration
+        from(configurations.runtimeClasspath.map { classpath ->
+            classpath.map { if (it.isDirectory) it else zipTree(it) }
+        })
+        // signature files of merged dependency jars would be invalid in the fat jar
+        exclude("META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA")
 
         manifest {
             attributes(
@@ -72,6 +81,15 @@ tasks {
         }
     }
 }
+
+// Keep the version in sync with jvmToolchainVersion in libs.versions.toml.
+// See the README on how to switch to another JDK, e.g. Azul Zulu.
+val jbrVersion = "25.0.4.1-%s-b635.79"
+fun jbrUrl(platform: String, extension: String) =
+    "https://cache-redirector.jetbrains.com/intellij-jbr/jbrsdk-${jbrVersion.format(platform)}.$extension"
+
+// Alternative: Azul Zulu JDK
+// val azulJdk = "zulu25.36.205-ca-jdk25.0.4.1"
 
 construo {
     name.set(application.applicationName)
@@ -87,14 +105,20 @@ construo {
         modules.set(listOf("java.desktop", "jdk.unsupported"))
     }
 
+    roast {
+        vmArgs.set(gameJvmArgs)
+    }
+
     targets {
         create<Target.Linux>("linuxX64") {
             architecture.set(Target.Architecture.X86_64)
-            jdkUrl.set("https://cdn.azul.com/zulu/bin/zulu25.36.205-ca-jdk25.0.4.1-linux_x64.tar.gz")
+            jdkUrl.set(jbrUrl("linux-x64", "tar.gz"))
+            // Azul: jdkUrl.set("https://cdn.azul.com/zulu/bin/${azulJdk}-linux_x64.tar.gz")
         }
         create<Target.Windows>("winX64") {
             architecture.set(Target.Architecture.X86_64)
-            jdkUrl.set("https://cdn.azul.com/zulu/bin/zulu25.36.205-ca-jdk25.0.4.1-win_x64.zip")
+            jdkUrl.set(jbrUrl("windows-x64", "zip"))
+            // Azul: jdkUrl.set("https://cdn.azul.com/zulu/bin/${azulJdk}-win_x64.zip")
         }
     }
 }

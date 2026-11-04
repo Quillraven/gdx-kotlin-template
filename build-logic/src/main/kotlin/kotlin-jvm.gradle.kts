@@ -9,15 +9,13 @@ val jvmVersion = versionCatalog.findVersion("jvmToolchainVersion").get().toStrin
 
 // JVM version defined for modules that use the kotlin-jvm convention plugin like core or lwjgl3
 kotlin {
-    jvmToolchain(jvmVersion.toInt())
+    // also configures the Java toolchain
+    jvmToolchain {
+        languageVersion = JavaLanguageVersion.of(jvmVersion.toInt())
+        vendor = JvmVendorSpec.AZUL
+    }
     compilerOptions {
         freeCompilerArgs.add("-Xname-based-destructuring=complete")
-    }
-}
-
-java {
-    toolchain {
-        vendor.set(JvmVendorSpec.AZUL)
     }
 }
 

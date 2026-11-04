@@ -25,6 +25,10 @@ To package for Linux or Windows run:
 - `./gradlew lwjgl3:packageLinuxX64`
 - `./gradlew lwjgl3:packageWinX64`
 
+The packaged games bundle a JDK that is downloaded automatically. By default, this is the
+[JetBrains Runtime SDK (JBRSDK)](https://github.com/JetBrains/JetBrainsRuntime/releases) because it has better Linux support
+(e.g. on Wayland). See [Changing the bundled JDK](#changing-the-bundled-jdk) on how to use a different one.
+
 For `teavm` there are four different tasks to build and optionally run it on `http://localhost:8080/`:
 
 - `./gradlew teavm:gdx_teavm_web_js_build`
@@ -51,3 +55,17 @@ To silence some warnings, add those VM options manually to your run configuratio
 --enable-native-access=ALL-UNNAMED
 --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
 ```
+
+----
+
+### Changing the bundled JDK
+
+The JDK that is bundled into the packaged game is configured in `lwjgl3/build.gradle.kts`:
+
+- `jbrVersion` and `jbrUrl(...)` define the JBRSDK download that is used by default.
+  To update it, pick a new release from the [JetBrainsRuntime releases](https://github.com/JetBrains/JetBrainsRuntime/releases)
+  and adjust the version (e.g. `25.0.4.1-%s-b635.79`).
+- To use another JDK, e.g. [Azul Zulu](https://www.azul.com/downloads/?package=jdk#zulu), set `jdkUrl` of each target
+  in the `construo { targets { ... } }` block to the download URL of that JDK for the target platform.
+  The commented Azul lines next to each target show an example.
+

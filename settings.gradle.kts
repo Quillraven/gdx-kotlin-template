@@ -3,7 +3,10 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         mavenCentral()
-        maven("https://central.sonatype.com/repository/maven-snapshots/")
+        maven {
+            url = uri("https://central.sonatype.com/repository/maven-snapshots/")
+            mavenContent { snapshotsOnly() }
+        }
     }
 }
 
@@ -16,8 +19,11 @@ dependencyResolutionManagement {
             url = uri("https://central.sonatype.com/repository/maven-snapshots/")
             mavenContent { snapshotsOnly() }
         }
-        // GDX TeaVM, Stripe FreeTypeSkin, TextraTypist, ...
-        maven { url = uri("https://jitpack.io") }
+        // JitPack hosts TextraTypist and FreeTypist; restricted to their group so nothing else is looked up there
+        exclusiveContent {
+            forRepository { maven("https://jitpack.io") }
+            filter { includeGroupAndSubgroups("com.github.tommyettinger") }
+        }
     }
 }
 

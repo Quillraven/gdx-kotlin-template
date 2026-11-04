@@ -7,12 +7,9 @@ plugins {
 
 // JVM version for convention plugins defined in build-logic
 kotlin {
-    jvmToolchain(libs.versions.jvmToolchainVersion.get().toInt())
-}
-
-java {
-    toolchain {
-        vendor.set(JvmVendorSpec.AZUL)
+    jvmToolchain {
+        languageVersion = JavaLanguageVersion.of(libs.versions.jvmToolchainVersion.get().toInt())
+        vendor = JvmVendorSpec.AZUL
     }
 }
 
