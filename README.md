@@ -64,7 +64,7 @@ The JDK that is bundled into the packaged game is configured in `lwjgl3/build.gr
 
 - `jbrVersion` and `jbrUrl(...)` define the JBRSDK download that is used by default.
   To update it, pick a new release from the [JetBrainsRuntime releases](https://github.com/JetBrains/JetBrainsRuntime/releases)
-  and adjust the version (e.g. `25.0.4.1-%s-b635.79`).
+  and adjust the version (e.g. `25.0.5.1-%s-b635.102`).
 - To use another JDK, e.g. [Azul Zulu](https://www.azul.com/downloads/?package=jdk#zulu), set `jdkUrl` of each target
   in the `construo { targets { ... } }` block to the download URL of that JDK for the target platform.
   The commented Azul lines next to each target show an example.

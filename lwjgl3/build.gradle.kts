@@ -84,12 +84,12 @@ tasks {
 
 // Keep the version in sync with jvmToolchainVersion in libs.versions.toml.
 // See the README on how to switch to another JDK, e.g. Azul Zulu.
-val jbrVersion = "25.0.4.1-%s-b635.79"
+val jbrVersion = "25.0.5.1-%s-b635.102"
 fun jbrUrl(platform: String, extension: String) =
     "https://cache-redirector.jetbrains.com/intellij-jbr/jbrsdk-${jbrVersion.format(platform)}.$extension"
 
 // Alternative: Azul Zulu JDK
-// val azulJdk = "zulu25.36.205-ca-jdk25.0.4.1"
+// val azulJdk = "zulu25.38.201-ca-jdk25.0.5.1"
 
 construo {
     name.set(application.applicationName)
